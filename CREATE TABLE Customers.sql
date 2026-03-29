@@ -1,0 +1,11 @@
+-- CREATE TABLE Customers (
+--     id INT NOT NULL PRIMARY KEY IDENTITY,
+--     firstName NVARCHAR (100) NOT NULL,
+--     lastName NVARCHAR (100) NOT NULL,
+--     email NVARCHAR (100) NOT NULL UNIQUE,
+--     phone NVARCHAR (100) NOT NULL,
+--     address NVARCHAR (100) NOT NULL,
+--     company NVARCHAR (100) NOT NULL,
+--     notes NVARCHAR (MAX) NOT NULL,
+--     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+-- );

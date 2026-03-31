@@ -21,7 +21,45 @@ namespace to_do_list.Components.Pages.Customers
         public List<CustomerInfo> CustomersList { get; set; } = [];
         public void OnGet()
         {
-            
+            try
+            {
+                string connectionString = _configuration.GetConnectionString("DefaultConnection") ?? "";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string sql = "SELECT * FROM Customers ORDER BY id DESC";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                CustomerInfo customer = new CustomerInfo
+                                {
+                                    Id = reader.GetInt32(0),
+                                    FirstName = reader.GetString(1),
+                                    LastName = reader.GetString(2),
+                                    Email = reader.GetString(3),
+                                    Phone = reader.GetString(4),
+                                    Address = reader.GetString(5),
+                                    Company = reader.GetString(6),
+                                    Notes = reader.GetString(7),
+                                    CreatedAt = reader.GetDateTime(8)
+                                };
+
+                                CustomersList.Add(customer);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (System.Exception)
+            {
+                
+                throw;
+            }
         }
 
         public class CustomerInfo

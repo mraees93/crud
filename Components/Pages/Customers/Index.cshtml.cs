@@ -12,6 +12,12 @@ namespace to_do_list.Components.Pages.Customers
 {
     public class Index : PageModel
     {
+        private readonly IConfiguration _configuration;
+
+        public Index(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public List<CustomerInfo> CustomersList { get; set; } = [];
         public void OnGet()
         {

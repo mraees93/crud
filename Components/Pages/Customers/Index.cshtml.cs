@@ -55,9 +55,9 @@ namespace to_do_list.Components.Pages.Customers
                     }
                 }
             }
-            catch (System.Exception)
+            catch (Exception ex)
             {
-                
+                Console.WriteLine("There was an error connecting to the Database: " + ex.Message);
                 throw;
             }
         }

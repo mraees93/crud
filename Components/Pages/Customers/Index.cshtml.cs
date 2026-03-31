@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Microsoft.Data.SqlClient; 
+using Microsoft.Extensions.Configuration; 
 
 namespace to_do_list.Components.Pages.Customers
 {

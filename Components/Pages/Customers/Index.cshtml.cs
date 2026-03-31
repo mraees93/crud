@@ -10,9 +10,10 @@ namespace to_do_list.Components.Pages.Customers
 {
     public class Index : PageModel
     {
-
+        public List<CustomerInfo> CustomersList { get; set; } = [];
         public void OnGet()
         {
+            
         }
 
         public class CustomerInfo

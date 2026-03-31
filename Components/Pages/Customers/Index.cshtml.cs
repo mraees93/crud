@@ -10,15 +10,22 @@ namespace to_do_list.Components.Pages.Customers
 {
     public class Index : PageModel
     {
-        private readonly ILogger<Index> _logger;
-
-        public Index(ILogger<Index> logger)
-        {
-            _logger = logger;
-        }
 
         public void OnGet()
         {
+        }
+
+        public class CustomerInfo
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; } = "";
+            public string LastName { get; set; } = "";
+            public string Email { get; set; } = "";
+            public string Phone { get; set; } = "";
+            public string Address { get; set; } = "";
+            public string Company { get; set; } = "";
+            public string Notes { get; set; } = "";
+            public DateTime CreatedAt { get; set; }
         }
     }
 }
